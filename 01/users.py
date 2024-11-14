@@ -1,6 +1,6 @@
 import os, json
 
-DATA_PATH = 'users.json'
+DATA_PATH = "01/users.json"
 
 # TRUE ak file existuje
 if not os.path.isfile(DATA_PATH):
@@ -73,4 +73,4 @@ def delete_user(username, password):
 
 #delete_user('test', 'heslo')
 
-change_password('dano-drevo', 'heslo-223', 'heslo-213', 'heslo-213')
+change_password('dano-drevo', 'heslo-213', 'heslo-113', 'heslo-113')
