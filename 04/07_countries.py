@@ -1,3 +1,5 @@
+from datetime import datetime
+
 countries = {
     "Irsko": 4593100,
     "Chorvatsko": 4290612,
@@ -46,14 +48,33 @@ def vypocitejPrumerDict(dataSet):
         countOfItems += 1
     return round(peopleTogether / countOfItems)
 
+# definice funkce s kontrolu hodnoty int, float
+def vypocitejSoucetDictWitConditions(dataSet):
+    countOfPeople = 0
+    countOfItems = 0
+    for country in dataSet:
+        numberOfPeople = dataSet[country]
+        if isinstance(numberOfPeople, (int, float)):
+            countOfPeople += numberOfPeople
+            countOfItems += 1
+    return round(countOfPeople / countOfItems)
+
 # Definice funkce s build in functions
-def vypocitejPrumerDictBuild(dataSet):
+def vypocitejPrumerDictWithBuild(dataSet):
     return round(sum(dataSet.values()) / len(dataSet))
 
 
-
+start_time = datetime.now()
 print('Prumer:', vypocitejPrumerDict(countries))
-print('Prumer:', vypocitejPrumerDictBuild(countries))
+print('celkovy cas procesu:', datetime.now() - start_time)
+
+start_time = datetime.now()
+print('Prumer:', vypocitejSoucetDictWitConditions(countries))
+print('celkovy cas procesu:', datetime.now() - start_time)
+
+start_time = datetime.now()
+print('Prumer:', vypocitejPrumerDictWithBuild(countries))
+print('celkovy cas procesu:', datetime.now() - start_time)
 
 
 
