@@ -1,11 +1,3 @@
-def vypocitejPrumer(dataSet):
-    peopleTogether = 0
-    countOfItems = 0
-    for country, numberOfPeople in dataSet.items():
-        peopleTogether += numberOfPeople
-        countOfItems += 1
-    return round(peopleTogether / countOfItems)
-
 countries = {
     "Irsko": 4593100,
     "Chorvatsko": 4290612,
@@ -45,8 +37,24 @@ countries = {
     "Česko": 10513800,
 }
 
+# Definice funkce prumer n prvku v dict bez build in functions
+def vypocitejPrumerDict(dataSet):
+    peopleTogether = 0
+    countOfItems = 0
+    for country, numberOfPeople in dataSet.items():
+        peopleTogether += numberOfPeople
+        countOfItems += 1
+    return round(peopleTogether / countOfItems)
 
-print('Prumer:', vypocitejPrumer(countries))
+# Definice funkce s build in functions
+def vypocitejPrumerDictBuild(dataSet):
+    return round(sum(dataSet.values()) / len(dataSet))
+
+
+
+print('Prumer:', vypocitejPrumerDict(countries))
+print('Prumer:', vypocitejPrumerDictBuild(countries))
+
 
 
         
