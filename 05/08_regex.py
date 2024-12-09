@@ -16,12 +16,13 @@
 
 # 777777777  777 777 777  +420777777777  +420 777 777 777
 
-
 # pro všechny tyto formáty vrátí True, jinak False
 
 # print(check_phone_number('test')) # -> False
 # print(check_phone_number('608 192 292')) # -> True (True pro všechny formáty uvedené výše)
 # print(check_phone_number('608 192 292...')) # -> False
+
+### " Suche ?.. prosim o test cisla : +420 777777777 . kazda to vyhodnoti jinak :)
 
 import re
 
