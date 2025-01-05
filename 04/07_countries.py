@@ -1,4 +1,5 @@
 from datetime import datetime
+import timeit, random
 
 countries = {
     "Irsko": 4593100,
@@ -61,20 +62,33 @@ def vypocitejSoucetDictWitConditions(dataSet):
 
 # Definice funkce s build in functions
 def vypocitejPrumerDictWithBuild(dataSet):
-    return round(sum(dataSet.values()) / len(dataSet))
+    average_population = round(sum(dataSet.values()) / len(dataSet))
+    print(f"Priemerná populácia je: {average_population}:")
+
+def check_max_min(dataset):
+    # Najväčšia populácia
+    max_country = max(countries, key=countries.get)
+    max_population = countries[max_country]
+
+    # Najmenšia populácia
+    min_country = min(countries, key=countries.get)
+    min_population = countries[min_country]
+
+    print(f"Najväčšia populácia je v {max_country}: {max_population}")
+    print(f"Najmenšia populácia je v {min_country}: {min_population}")
 
 
-start_time = datetime.now()
-print('Prumer:', vypocitejPrumerDict(countries))
-print('celkovy cas procesu:', datetime.now() - start_time)
 
-start_time = datetime.now()
-print('Prumer:', vypocitejSoucetDictWitConditions(countries))
-print('celkovy cas procesu:', datetime.now() - start_time)
+# start_time = datetime.now()
+# print('Prumer:', vypocitejPrumerDict(countries))
+# print('celkovy cas procesu:', datetime.now() - start_time)
 
-start_time = datetime.now()
-print('Prumer:', vypocitejPrumerDictWithBuild(countries))
-print('celkovy cas procesu:', datetime.now() - start_time)
+# start_time = datetime.now()
+# print('Prumer:', vypocitejSoucetDictWitConditions(countries))
+# print('celkovy cas procesu:', datetime.now() - start_time)
+
+vypocitejPrumerDictWithBuild(countries)
+check_max_min(countries)
 
 
 
