@@ -3,145 +3,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <title>My Bazos scraper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-        div {
-            --columns: 1;
-            display: grid;
-            grid-template-columns: repeat(var(--columns), 1fr);
-            gap: 2em;
-        }
-        
-        @media screen and (min-width: 576px) { div { --columns: 2; } }
-        @media screen and (min-width: 768px) { div { --columns: 3; } }
-        @media screen and (min-width: 1024px) { div { --columns: 4; } }
-        @media screen and (min-width: 1280px) { div { --columns: 5; } }
-        
-        div > a {
-            background: var(--pico-muted-border-color);
-            border-radius: 1em;
-            overflow: hidden;
-        }
 
-        div > a > h2 {
-            font-size: 1em;
-            margin: .5em 1em;
-        }
+    .product-container {
+        display: grid;
+        gap: 1rem; /* Medzera medzi produktmi */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Automaticky nastaví počet stĺpcov podľa šírky obrazovky */
+    }
 
-        div > a > img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: contain;
-            background: var(--pico-muted-color);
-        }
-    </style>
+    .mycard {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+    .thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .cardtitle {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 0.5rem;
+    }
+
+    .btn {
+        margin-top: 0.5rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 </head>
+
 <body>
     <main class="container">
         <h1>Produkty</h1>
-        <div>
+        <div class="product-container">
             
-            <a href="/inzerat/196099300/apple-iphone-16-pro-max-256gb.php">
-                <h2>Apple iPhone 16 Pro Max 256GB</h2>
-                <img src="https://www.bazos.cz/img/1t/300/196099300.jpg" alt="Apple iPhone 16 Pro Max 256GB">
-            </a>
-            
-            <a href="/inzerat/196150733/iphone-15-pro-max.php">
-                <h2>iPhone 15 Pro Max</h2>
-                <img src="https://www.bazos.cz/img/1t/733/196150733.jpg" alt="iPhone 15 Pro Max">
-            </a>
-            
-            <a href="/inzerat/196218114/iphone-11-pro-64gb-space-gray.php">
-                <h2>iPhone 11 Pro 64GB Space Gray</h2>
-                <img src="https://www.bazos.cz/img/1t/114/196218114.jpg" alt="iPhone 11 Pro 64GB Space Gray">
-            </a>
-            
-            <a href="/inzerat/195260123/iphone-x-silver-kondice-baterie-100-top.php">
-                <h2>iPhone X Silver KONDICE BATERIE 100% TOP</h2>
-                <img src="https://www.bazos.cz/img/1t/123/195260123.jpg" alt="iPhone X Silver KONDICE BATERIE 100% TOP">
-            </a>
-            
-            <a href="/inzerat/195802434/prodam-iphone-12-pro.php">
-                <h2>iPhone 12 pro a AirPods pro</h2>
-                <img src="https://www.bazos.cz/img/1t/434/195802434.jpg" alt="iPhone 12 pro a AirPods pro">
-            </a>
-            
-            <a href="/inzerat/195736011/apple-iphone-15-pro-128gb-natural-titan-zaruka-pouzdra.php">
-                <h2>Apple iPhone 15 Pro 128GB Natural titan, Záruka, pouzdra</h2>
-                <img src="https://www.bazos.cz/img/1t/011/195736011.jpg" alt="Apple iPhone 15 Pro 128GB Natural titan, Záruka, pouzdra">
-            </a>
-            
-            <a href="/inzerat/195905880/apple-iphone-15-pro-256gb-black-titanium.php">
-                <h2>Apple iPhone 15 Pro 256GB Black Titanium</h2>
-                <img src="https://www.bazos.cz/img/1t/880/195905880.jpg" alt="Apple iPhone 15 Pro 256GB Black Titanium">
-            </a>
-            
-            <a href="/inzerat/195720699/apple-iphone-15-128gb-cerny.php">
-                <h2>Apple iPhone 15 128GB černý</h2>
-                <img src="https://www.bazos.cz/img/1t/699/195720699.jpg" alt="Apple iPhone 15 128GB černý">
-            </a>
-            
-            <a href="/inzerat/195874747/garmin-fenix-7x-pro-sapphire-solar-carbon-gray-dlc-titanium.php">
-                <h2>Garmin Fenix 7X PRO Sapphire Solar Carbon Gray DLC Titanium</h2>
-                <img src="https://www.bazos.cz/img/1t/747/195874747.jpg" alt="Garmin Fenix 7X PRO Sapphire Solar Carbon Gray DLC Titanium">
-            </a>
-            
-            <a href="/inzerat/196248236/bez-skrabancu-iphone-13-pro-max-256gb-ochranne-sklo.php">
-                <h2>Bez škrábanců iPhone 13 Pro Max 256GB ochranné sklo</h2>
-                <img src="https://www.bazos.cz/img/1t/236/196248236.jpg" alt="Bez škrábanců iPhone 13 Pro Max 256GB ochranné sklo">
-            </a>
-            
-            <a href="/inzerat/196115782/iphon-12-64gb.php">
-                <h2>Iphon 12 64GB</h2>
-                <img src="https://www.bazos.cz/img/1t/782/196115782.jpg" alt="Iphon 12 64GB">
-            </a>
-            
-            <a href="/inzerat/196028175/apple-watch-6-44mm.php">
-                <h2>Apple Watch 6 44mm</h2>
-                <img src="https://www.bazos.cz/img/1t/175/196028175.jpg" alt="Apple Watch 6 44mm">
-            </a>
-            
-            <a href="/inzerat/196234337/apple-watch-9-45mm-starlight-nove.php">
-                <h2>iPhone 13 Pro Max 512GB, stav nového, záruka, faktura</h2>
-                <img src="https://www.bazos.cz/img/1t/337/196234337.jpg" alt="iPhone 13 Pro Max 512GB, stav nového, záruka, faktura">
-            </a>
-            
-            <a href="/inzerat/196234343/iphone-15-pro-max-256gb-novy-zaruka.php">
-                <h2>iPhone 14 Plus 128GB ZÁNOVNÍ, záruka 2 roky</h2>
-                <img src="https://www.bazos.cz/img/1t/343/196234343.jpg" alt="iPhone 14 Plus 128GB ZÁNOVNÍ, záruka 2 roky">
-            </a>
-            
-            <a href="/inzerat/196038551/iphone-15-pro-blue-256.php">
-                <h2>iPhone 15 Pro blue 256</h2>
-                <img src="https://www.bazos.cz/img/1t/551/196038551.jpg" alt="iPhone 15 Pro blue 256">
-            </a>
-            
-            <a href="/inzerat/196212518/iphone-14pro-max-128gb.php">
-                <h2>iPhone 14 pro MAX 128GB</h2>
-                <img src="https://www.bazos.cz/img/1t/518/196212518.jpg" alt="iPhone 14 pro MAX 128GB">
-            </a>
-            
-            <a href="/inzerat/196210139/belkin-boost-charge-pro-3-in-1.php">
-                <h2>Belkin Boost Charge Pro 3-in-1</h2>
-                <img src="https://www.bazos.cz/img/1t/139/196210139.jpg" alt="Belkin Boost Charge Pro 3-in-1">
-            </a>
-            
-            <a href="/inzerat/196210038/apple-watch-7-45mm.php">
-                <h2>Apple Watch 7 45mm</h2>
-                <img src="https://www.bazos.cz/img/1t/038/196210038.jpg" alt="Apple Watch 7 45mm">
-            </a>
-            
-            <a href="/inzerat/196197615/apple-iphone-12-mini-sleva-praskla-zada.php">
-                <h2>Apple iPhone 12 mini - SLEVA - prasklá záda</h2>
-                <img src="https://www.bazos.cz/img/1t/615/196197615.jpg" alt="Apple iPhone 12 mini - SLEVA - prasklá záda">
-            </a>
-            
-            <a href="/inzerat/196193025/prodam-iphone-11-yellow-128gb.php">
-                <h2>Prodám iPhone 11, Yellow 128GB</h2>
-                <img src="https://www.bazos.cz/img/1t/025/196193025.jpg" alt="Prodám iPhone 11, Yellow 128GB">
-            </a>
-            
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/300/196099300.jpg" class="thumbnail" alt="Apple iPhone 16 Pro Max 256GB"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple iPhone 16 Pro Max 256GB</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196099300/apple-iphone-16-pro-max-256gb.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/733/196150733.jpg" class="thumbnail" alt="iPhone 15 Pro Max"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 15 Pro Max</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196150733/iphone-15-pro-max.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/114/196218114.jpg" class="thumbnail" alt="iPhone 11 Pro 64GB Space Gray"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 11 Pro 64GB Space Gray</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196218114/iphone-11-pro-64gb-space-gray.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/123/195260123.jpg" class="thumbnail" alt="iPhone X Silver KONDICE BATERIE 100% TOP"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone X Silver KONDICE BATERIE 100% TOP</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/195260123/iphone-x-silver-kondice-baterie-100-top.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/434/195802434.jpg" class="thumbnail" alt="iPhone 12 pro a AirPods pro"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 12 pro a AirPods pro</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/195802434/prodam-iphone-12-pro.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/011/195736011.jpg" class="thumbnail" alt="Apple iPhone 15 Pro 128GB Natural titan, Záruka, pouzdra"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple iPhone 15 Pro 128GB Natural titan, Záruka, pouzdra</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/195736011/apple-iphone-15-pro-128gb-natural-titan-zaruka-pouzdra.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/880/195905880.jpg" class="thumbnail" alt="Apple iPhone 15 Pro 256GB Black Titanium"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple iPhone 15 Pro 256GB Black Titanium</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/195905880/apple-iphone-15-pro-256gb-black-titanium.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/699/195720699.jpg" class="thumbnail" alt="Apple iPhone 15 128GB černý"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple iPhone 15 128GB černý</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/195720699/apple-iphone-15-128gb-cerny.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/747/195874747.jpg" class="thumbnail" alt="Garmin Fenix 7X PRO Sapphire Solar Carbon Gray DLC Titanium"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Garmin Fenix 7X PRO Sapphire Solar Carbon Gray DLC Titanium</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/195874747/garmin-fenix-7x-pro-sapphire-solar-carbon-gray-dlc-titanium.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/236/196248236.jpg" class="thumbnail" alt="Bez škrábanců iPhone 13 Pro Max 256GB ochranné sklo"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Bez škrábanců iPhone 13 Pro Max 256GB ochranné sklo</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196248236/bez-skrabancu-iphone-13-pro-max-256gb-ochranne-sklo.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/782/196115782.jpg" class="thumbnail" alt="Iphon 12 64GB"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Iphon 12 64GB</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196115782/iphon-12-64gb.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/175/196028175.jpg" class="thumbnail" alt="Apple Watch 6 44mm"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple Watch 6 44mm</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196028175/apple-watch-6-44mm.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/337/196234337.jpg" class="thumbnail" alt="iPhone 13 Pro Max 512GB, stav nového, záruka, faktura"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 13 Pro Max 512GB, stav nového, záruka, faktura</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196234337/apple-watch-9-45mm-starlight-nove.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/343/196234343.jpg" class="thumbnail" alt="iPhone 14 Plus 128GB ZÁNOVNÍ, záruka 2 roky"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 14 Plus 128GB ZÁNOVNÍ, záruka 2 roky</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196234343/iphone-15-pro-max-256gb-novy-zaruka.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/551/196038551.jpg" class="thumbnail" alt="iPhone 15 Pro blue 256"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 15 Pro blue 256</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196038551/iphone-15-pro-blue-256.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/518/196212518.jpg" class="thumbnail" alt="iPhone 14 pro MAX 128GB"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">iPhone 14 pro MAX 128GB</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196212518/iphone-14pro-max-128gb.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/139/196210139.jpg" class="thumbnail" alt="Belkin Boost Charge Pro 3-in-1"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Belkin Boost Charge Pro 3-in-1</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196210139/belkin-boost-charge-pro-3-in-1.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/038/196210038.jpg" class="thumbnail" alt="Apple Watch 7 45mm"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple Watch 7 45mm</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196210038/apple-watch-7-45mm.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/615/196197615.jpg" class="thumbnail" alt="Apple iPhone 12 mini - SLEVA - prasklá záda"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Apple iPhone 12 mini - SLEVA - prasklá záda</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196197615/apple-iphone-12-mini-sleva-praskla-zada.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
+<div class="mycard" style="width: 10rem;"> 
+    <img src="https://www.bazos.cz/img/1t/025/196193025.jpg" class="thumbnail" alt="Prodám iPhone 11, Yellow 128GB"> 
+    <div class="cardbody"> 
+        <h5 class="cardtitle">Prodám iPhone 11, Yellow 128GB</h5> 
+        <p class="cardtext">Some quick example text to build on the card title and make up the bulk of the card's content.</p> 
+        <a href="/inzerat/196193025/prodam-iphone-11-yellow-128gb.php" class="btn btn-primary">Click Here</a>
+    </div>
+</div>
+
         </div>
     </main>
 </body>

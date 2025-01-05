@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <title>My Bazos scraper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
-        div {
-            --columns: 1;
-            display: grid;
-            grid-template-columns: repeat(var(--columns), 1fr);
-            gap: 2em;
-        }
-        
-        @media screen and (min-width: 576px) { div { --columns: 2; } }
-        @media screen and (min-width: 768px) { div { --columns: 3; } }
-        @media screen and (min-width: 1024px) { div { --columns: 4; } }
-        @media screen and (min-width: 1280px) { div { --columns: 5; } }
-        
-        div > a {
-            background: var(--pico-muted-border-color);
-            border-radius: 1em;
-            overflow: hidden;
-        }
 
-        div > a > h2 {
-            font-size: 1em;
-            margin: .5em 1em;
-        }
+    .product-container {
+        display: grid;
+        gap: 1rem; /* Medzera medzi produktmi */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        /* Automaticky nastaví počet stĺpcov podľa šírky obrazovky */
+    }
 
-        div > a > img {
-            width: 100%;
-            aspect-ratio: 4/3;
-            object-fit: contain;
-            background: var(--pico-muted-color);
-        }
-    </style>
+    .mycard {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+    .thumbnail {
+        width: 100%;
+        height: auto;
+    }
+
+    .cardtitle {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 0.5rem;
+    }
+
+    .btn {
+        margin-top: 0.5rem;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 </head>
+
 <body>
     <main class="container">
         <h1>Produkty</h1>
-        <div>
+        <div class="product-container">
             <!-- HTML -->
         </div>
     </main>
