@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registrace úspěšná</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9ffe9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #28a745;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Success Registration</h1>
+        <p>Registrace byla úspěšná.</p>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td>{{ name }}</td>
+            </tr>
+            <tr>
+                <td>Surname: </td>
+                <td>{{ surname }}</td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>{{ email }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

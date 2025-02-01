@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrace selhala</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffe9e9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #dc3545;
+        }
+        p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Failed</h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% else %}
+            <p>Něco se pokazilo. Zkuste to prosím znovu.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

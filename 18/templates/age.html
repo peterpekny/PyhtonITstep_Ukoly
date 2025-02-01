@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Výpočet věku</title>
+    <style>
+        /* Základní styly pro tělo stránky */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        /* Kontejner pro centrování obsahu */
+        .container {
+            max-width: 500px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        /* Nadpis */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        /* Formulář s vertikálním rozložením prvků */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        /* Stylování vstupního pole */
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        /* Stylování tlačítka */
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        /* Stylování výsledné zprávy */
+        p.result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #28a745;
+        }
+        /* Stylování chybové zprávy */
+        p.error {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Zadak svoj rok narodenia</h1>
+        <form method="post">
+            {% csrf_token %}
+            <!-- Použití atributů min a max pro základní validaci na straně klienta -->
+            <input type="number" name="birth_year" placeholder="napr. 1990" required min="1900" max="{{ current_year|default:2100 }}">
+            <button type="submit">Odeslat</button>
+        </form>
+
+        {% if result %}
+            <p class="result">{{ result }}</p>
+        {% endif %}
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
