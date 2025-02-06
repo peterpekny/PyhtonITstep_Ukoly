@@ -2,8 +2,15 @@ Cílem projektu je rozšíření statické webové stránky https://peter.pekny.
 o jednoduchý CMS systém, který umožní správu článků v nové sekci 
 "Projects and others".
 
-    o - Lokální správa uživatelem admin (adminské přihlášení)
-    o - Implementace funkcí pro přidávání, úpravu a mazání článků
+    o - Lokální správa uživatelem admin (administratorské přihlášení)
+    o - Implementace funkcí pro:
+            - přidávání,
+            - úpravu, 
+            - mazání článků
+
     o - Integrace CKEditor 5 pro editaci článků
-    o - Komentářový systém (CKEditor – Comment widget) + možnost integrace přihlášení přes Google a Facebook
-    o - Sys admin task: Nasazení na virtuální server: nginx + gunicorn + Django - best practise
+    o - Komentářový systém (CKEditor – Comment widget) + možnost integrace přihlášení:
+            - Google,
+            - Facebook
+
+    o - Sys admin task: Nasazení na virtuální server: nginx + gunicorn + Django - best practise (i hope)
