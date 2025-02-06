@@ -9,7 +9,7 @@ o jednoduchý CMS systém, který umožní správu článků v nové sekci
             - mazání článků
 
     o - Integrace CKEditor 5 pro editaci článků
-    o - Komentářový systém (CKEditor – Comment widget) + možnost integrace přihlášení:
+    o - Komentářový systém (CKEditor – Comment widget) + možnost integrace přihlášení social accounts:
             - Google,
             - Facebook
 
